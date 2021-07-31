@@ -8,14 +8,27 @@ const routes: Routes = [
   // {path: '', pathMatch: 'full', redirectTo:'/events'},
   // {path: 'events', loadChildren: () => import('./pages/home/events/events.module').then(m => m.EventsModule)},
 
-  {path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)},
-  {path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)},
-
-
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'landingpage',
+    loadChildren: () =>
+      import('./pages/landingpage/landingpage.module').then(
+        (m) => m.LandingpageModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
