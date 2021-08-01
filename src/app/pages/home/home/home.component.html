@@ -8,8 +8,8 @@
     [nzTrigger]="null"
   >
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+      <a href="https://skyhawk.netlify.app" target="_blank">
+        <img src="/assets/img/icon.svg" alt="SKY HAWK" />
         <h1>Sky-Hawk</h1>
       </a>
     </div>
@@ -19,19 +19,13 @@
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/home/dashboard">Dashboard</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/home/events">Events</a>
-          </li>
-          <!-- <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li> -->
-        </ul>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/home/dashboard">Dashboard</a>
       </li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/home/events">Events</a>
+      </li>
+
       <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
         <ul>
           <li nz-menu-item nzMatchRouter>

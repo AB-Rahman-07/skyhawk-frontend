@@ -1,4 +1,20 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
+
+.ant-collapse-content {
+  background-color: #fff;
+  // border-color: $borderColor;
+}
+// .ant-collapse:nth-child(even) {
+//   background-color: transparent !important;
+// }
+
+.odd .ant-collapse {
+  background-color: transparent;
+}
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+}

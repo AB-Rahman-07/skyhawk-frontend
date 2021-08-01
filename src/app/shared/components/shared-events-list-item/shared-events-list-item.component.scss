@@ -1,9 +1,12 @@
+.ant-descriptions-item-label {
+  padding: 2px 4px !important;
+}
+
 .box {
   word-break: break-all;
 }
-
 .inner-item {
-  font-size: 12px;
+  font-size: 13px;
   padding: 1px 4px;
   margin-right: 5px;
   margin-left: 8px;
@@ -12,18 +15,11 @@
   border-radius: 4px;
   font-weight: bold;
 }
-.timestamp {
-  font-size: 13px;
-}
-
-.first {
-  margin-left: 5px;
-}
 
 .title {
-  background-color: rgba(0, 86, 144, 0.1);
+  background-color: rgba(15, 45, 66, 0.13);
   // color: #343741;
-  color: #888d9c;
+  color: #42444a;
 }
 .body {
   // color: #343741;
@@ -46,7 +42,7 @@
 }
 
 .left-text {
-  color: #673ab7;
+  color: #2db7f5;
   // color: #40612c;
   font-size: 14px;
   font-weight: 600;
@@ -56,15 +52,4 @@
   font-weight: 600;
   font-size: 14 px;
   color: black;
-}
-
-.even {
-  nz-collapse {
-    background: #bdd6ef;
-  }
-}
-.odd {
-  nz-collapse {
-    background: #e9ffe9;
-  }
 }

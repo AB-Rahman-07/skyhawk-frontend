@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 })
 export class SharedEventsListItemComponent implements OnInit {
   constructor() {}
-  @Input() item:any;
+  @Input() item: any;
+  @Input() index = 0;
   ngOnInit() {}
 }
