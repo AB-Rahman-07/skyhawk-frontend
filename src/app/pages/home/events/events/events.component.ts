@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SocketioService } from 'src/app/sdk/services/socketio.service';
 
 @Component({
   selector: 'app-events',
@@ -346,7 +348,13 @@ export class EventsComponent implements OnInit {
   ];
 
   loading = false;
-  constructor() {}
+  sub: Subscription;
+  constructor(private socketioService: SocketioService) {
+    this.sub = this.socketioService.onEvent().subscribe((response) => {
+      const parsed = JSON.parse(response);
+      console.log('AB WE DID IT', parsed);
+    });
+  }
 
   ngOnInit(): void {}
 }
