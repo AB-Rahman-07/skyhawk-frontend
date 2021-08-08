@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-signup',
   templateUrl: './signup.component.html',
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
 }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginRoutingModule } from './signup-routing.module';
-import { LoginComponent } from './signup/signup.component';
+import { SignupRoutingModule } from './signup-routing.module';
+import { SignupComponent } from './signup/signup.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -14,10 +14,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [LoginComponent, NavbarComponent, FooterComponent],
+  declarations: [SignupComponent, NavbarComponent, FooterComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule,
+    SignupRoutingModule,
     // FormsModule,
     // ReactiveFormsModule,
     // NzFormModule,
