@@ -11,16 +11,22 @@ export class SocketioService {
   socket: SocketIOClient.Socket;
   socketId: any;
   constructor() {
-    const socketUrl = 'http://localhost:5100';
-    this.socket = io(socketUrl);
-    this.socket.on('connect', () => {
+    console.log('constructer called');
+    const socketUrl = 'http://192.168.18.26:3000';
+    this.socket = io(socketUrl, {
+      //   withCredentials: true,
+      //   extraHeaders: {
+      //     'my-custom-header': 'abcd',
+      //   },
+    });
+    this.socket.on('connection', () => {
       console.log('socket connected');
     });
   }
 
   onEvent() {
     return new Observable((observer: Observer<any>) => {
-      this.socket.on('event', (data: any) => {
+      this.socket.on('events', (data: any) => {
         observer.next(data);
       });
     });

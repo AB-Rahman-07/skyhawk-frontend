@@ -3,16 +3,13 @@
     <nz-collapse-panel [nzHeader]="description">
       <div class="row">
         <div class="col-lg-4">
-          <!-- <nb-card class="mini-event-card">
-              <nb-card-header>Source Information</nb-card-header>
-              <nb-card-body> -->
           <div class="row">
             <div class="col-lg-4">
               <span class="left-text">Source IP</span>
             </div>
             <div class="col-lg-8">
               :
-              <span class="right-text">{{ item?.["client_addr"] }}</span>
+              <span class="right-text">{{ item?.["ip_src"] }}</span>
             </div>
           </div>
           <div class="row">
@@ -21,43 +18,18 @@
             </div>
             <div class="col-lg-8">
               :
-              <span class="right-text">{{ item?.["client_port"] }}</span>
+              <span class="right-text">{{ item?.["src_port"] }}</span>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-4">
-              <span class="left-text">Packets OUT</span>
-            </div>
-            <div class="col-lg-8">
-              :
-              <span class="right-text">{{
-                item?.["packet_count_stc"]
-              }}</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4">
-              <span class="left-text">Bytes OUT</span>
-            </div>
-            <div class="col-lg-8">
-              :
-              <span class="right-text">{{ item?.["vol_pkt_stc"] }}</span>
-            </div>
-          </div>
-          <!-- </nb-card-body>
-            </nb-card> -->
         </div>
         <div class="col-lg-4">
-          <!-- <nb-card class="mini-event-card">
-            <nb-card-header>Destination Information</nb-card-header>
-            <nb-card-body> -->
           <div class="row">
             <div class="col-lg-8">
               <span class="left-text">Destination IP</span>
             </div>
             <div class="col-lg-4">
               :
-              <span class="right-text">{{ item?.["server_addr"] }}</span>
+              <span class="right-text">{{ item?.["ip_dst"] }}</span>
             </div>
           </div>
           <div class="row">
@@ -66,69 +38,9 @@
             </div>
             <div class="col-lg-4">
               :
-              <span class="right-text">{{ item?.["server_port"] }}</span>
+              <span class="right-text">{{ item?.["dst_port"] }}</span>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-8">
-              <span class="left-text">Packets IN</span>
-            </div>
-            <div class="col-lg-4">
-              :
-              <span class="right-text">{{
-                item?.["packet_count_cts"]
-              }}</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-8">
-              <span class="left-text">Bytes IN</span>
-            </div>
-            <div class="col-lg-4">
-              :
-              <span class="right-text">{{ item?.["vol_pkt_cts"] }}</span>
-            </div>
-          </div>
-          <!-- </nb-card-body>
-          </nb-card> -->
-        </div>
-
-        <div class="col-lg-4">
-          <!-- <nb-card class="mini-event-card"> -->
-          <!-- <nb-card-header>Additional Information</nb-card-header> -->
-          <!-- <nb-card-body> -->
-          <div class="row">
-            <div class="col-lg-4">
-              <span class="left-text">Service/Protocol</span>
-            </div>
-            <div class="col-lg-8">
-              :
-              <span class="right-text">
-                <nz-tag>
-                  {{ item?._source["protocol"] }}
-                </nz-tag>
-
-                <button
-                  *ngIf="item?._source['is_email'] === 1"
-                  nz-button
-                  [nzSize]="'small'"
-                >
-                  <i nz-icon nzType="mail"></i> Open Email
-                </button>
-              </span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4">
-              <span class="left-text">Category </span>
-            </div>
-            <div class="col-lg-8">
-              :
-              <span class="right-text">{{ item?.["family_name"] }}</span>
-            </div>
-          </div>
-          <!-- </nb-card-body>
-            </nb-card> -->
         </div>
       </div>
     </nz-collapse-panel>
@@ -136,45 +48,39 @@
   <ng-template #description>
     <div class="row">
       <div style="margin-top: 10px" class="col-lg-2">
-        <div class="timestamp">
-          <span class="">{{ item?.["date_time"] }} </span>
-        </div>
+        <!-- <div class="timestamp">
+          <span class="">{{ item["date_time"] }} </span>
+        </div> -->
       </div>
       <div class="col-lg-10">
         <div class="box">
           <span class="inner-item title"> Protocol </span>
           <span class="inner-item body">
-            <nz-tag [nzColor]="'#2db7f5'">
-              {{ item?.["protocol"] }}
+            <nz-tag [nzColor]="'#2db7f5'" *ngIf="item?.['ip_protocol']===6">
+              TCP
+            </nz-tag>
+            <nz-tag [nzColor]="'#2db7f5'" *ngIf="item?.['ip_protocol']===17">
+              UDP
+            </nz-tag>
+            <nz-tag
+              [nzColor]="'#2db7f5'"
+              *ngIf="item?.['ip_protocol']!==17 && item?.['ip_protocol']!==6"
+            >
+              {{ item?.['ip_protocol']}}
             </nz-tag>
           </span>
 
           <span class="inner-item title">Source IP </span>
-          <span class="inner-item body"
-            >{{ item?._source["client_addr"] }}
-          </span>
-
-          <span class="inner-item title">Destination IP </span>
-          <span class="inner-item body"
-            >{{ item?._source["server_addr"] }}
-          </span>
+          <span class="inner-item body">{{ item?.["ip_src"] }} </span>
 
           <span class="inner-item title">Source Port </span>
-          <span class="inner-item body"
-            >{{ item?._source["client_port"] }}
-          </span>
+          <span class="inner-item body">{{ item?.["src_port"] }} </span>
+
+          <span class="inner-item title">Destination IP </span>
+          <span class="inner-item body">{{ item?.["ip_dst"] }} </span>
 
           <span class="inner-item title">Destination Port </span>
-          <span class="inner-item body"
-            >{{ item?._source["server_port"] }}
-          </span>
-          <span class="inner-item title">Family Name </span>
-          <span class="inner-item body"
-            >{{ item?._source["family_name"] }}
-          </span>
-
-          <span class="inner-item title">Detailed Name </span>
-          <span class="inner-item body">{{ item?._source["long_name"] }} </span>
+          <span class="inner-item body">{{ item?.["dst_port"] }} </span>
         </div>
       </div>
     </div>

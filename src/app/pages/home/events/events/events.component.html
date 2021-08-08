@@ -1,9 +1,6 @@
-<p>events works!</p>
-<!-- <nz-list nzBordered nzSize="small">
-  <nz-list-item *ngFor="let item of data">
-    <shared-events-list-item [item]="item"></shared-events-list-item>
-  </nz-list-item> -->
-<!-- </nz-list> -->
+<h1>{{ count | number }}</h1>
+
+<nz-switch [(ngModel)]="realTime"></nz-switch>
 
 <nz-list
   [nzDataSource]="data"

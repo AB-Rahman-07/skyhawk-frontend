@@ -8,7 +8,7 @@ import { SocketioService } from 'src/app/sdk/services/socketio.service';
   styleUrls: ['./events.component.scss'],
 })
 export class EventsComponent implements OnInit {
-  data = [
+  tempdata = [
     {
       client_addr: '72.21.17.36',
       client_port: -7913,
@@ -347,14 +347,30 @@ export class EventsComponent implements OnInit {
     },
   ];
 
+  count = 0;
+  realTime = true;
+  data: any = [];
   loading = false;
   sub: Subscription;
   constructor(private socketioService: SocketioService) {
-    this.sub = this.socketioService.onEvent().subscribe((response) => {
-      const parsed = JSON.parse(response);
-      console.log('AB WE DID IT', parsed);
+    this.sub = this.socketioService.onEvent().subscribe((response: any) => {
+      if (this.realTime) {
+        const parsed = JSON.parse(response);
+        // parsed.date_time = new Date(parsed.timestamp);
+        this.data = [parsed, ...this.data];
+        this.count++;
+
+        if (this.count % 50 === 0) {
+          this.data.length = 10;
+        }
+      }
     });
   }
 
   ngOnInit(): void {}
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
 }
