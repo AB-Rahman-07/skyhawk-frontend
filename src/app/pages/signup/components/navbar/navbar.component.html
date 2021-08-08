@@ -9,6 +9,7 @@
     justify-between
     px-2
     py-3
+    bg-gray-100
   "
 >
   <div
@@ -33,7 +34,7 @@
           py-2
           whitespace-nowrap
           uppercase
-          text-white
+          text-black
         "
         href=""
         >Sky-Hawk</a
@@ -55,7 +56,7 @@
         type="button"
         (click)="toggleNavbar()"
       >
-        <i class="text-white fas fa-bars"></i>
+        <i class="text-black fas fa-bars"></i>
       </button>
     </div>
     <div
@@ -204,11 +205,11 @@
               ml-3
               mb-3
             "
-            routerLink="/signup"
+            routerLink="/login"
             type="button"
             style="transition: all 0.15s ease 0s"
           >
-            <i class="fas fa-arrow-alt-circle-down"></i> Sign Up
+            <i class="fas fa-arrow-alt-circle-down"></i> Sign in
           </button>
         </li>
       </ul>
