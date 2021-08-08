@@ -1,86 +1,93 @@
-<!-- <app-navbar></app-navbar> -->
-<div class="bg-grey-lighter min-h-screen flex flex-col">
-  <div
-    class="
-      container
-      max-w-sm
-      mx-auto
-      flex-1 flex flex-col
-      items-center
-      justify-center
-      px-2
-    "
-  >
-    <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-      <h1 class="mb-8 text-3xl text-center">Sign up</h1>
-      <input
-        type="text"
-        class="block border border-grey-light w-full p-3 rounded mb-4"
-        name="fullname"
-        placeholder="Full Name"
-      />
+<app-navbar></app-navbar>
 
-      <input
-        type="text"
-        class="block border border-grey-light w-full p-3 rounded mb-4"
-        name="email"
-        placeholder="Email"
-      />
+<!-- <br />
+<br />
+<br />
+<br />
+<br />
+<br /> -->
 
-      <input
-        type="password"
-        class="block border border-grey-light w-full p-3 rounded mb-4"
-        name="password"
-        placeholder="Password"
-      />
-      <input
-        type="password"
-        class="block border border-grey-light w-full p-3 rounded mb-4"
-        name="confirm_password"
-        placeholder="Confirm Password"
-      />
-
-      <button
-        type="submit"
-        class="
-          w-full
-          text-center
-          py-3
-          rounded
-          bg-green
-          text-white
-          hover:bg-green-dark
-          focus:outline-none
-          my-1
-        "
-      >
-        Create Account
-      </button>
-
-      <div class="text-center text-sm text-grey-dark mt-4">
-        By signing up, you agree to the
-        <a
-          class="no-underline border-b border-grey-dark text-grey-dark"
-          href="#"
-        >
-          Terms of Service
-        </a>
-        and
-        <a
-          class="no-underline border-b border-grey-dark text-grey-dark"
-          href="#"
-        >
-          Privacy Policy
-        </a>
+<div class="py-20 h-screen bg-gray-300 px-2">
+  <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-md">
+    <div class="md:flex">
+      <div class="w-full p-3 px-6 py-10">
+        <div class="text-center">
+          <span class="text-xl text-gray-700">Registration Form</span>
+        </div>
+        <div class="mt-3 relative">
+          <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400"
+            >First name</span
+          >
+          <input
+            type="text"
+            class="
+              h-12
+              px-2
+              w-full
+              border-2
+              rounded
+              focus:outline-none focus:border-red-600
+            "
+          />
+        </div>
+        <div class="mt-4 relative">
+          <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400"
+            >Last name</span
+          >
+          <input
+            type="text"
+            class="
+              h-12
+              px-2
+              w-full
+              border-2
+              rounded
+              focus:outline-none focus:border-red-600
+            "
+          />
+        </div>
+        <div class="mt-4 relative">
+          <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400"
+            >Email</span
+          >
+          <input
+            type="text"
+            class="
+              h-12
+              px-2
+              w-full
+              border-2
+              rounded
+              focus:outline-none focus:border-red-600
+            "
+          />
+        </div>
+        <div class="mt-4 relative">
+          <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400"
+            >Password</span
+          >
+          <input
+            type="text"
+            class="
+              h-12
+              px-2
+              w-full
+              border-2
+              rounded
+              focus:outline-none focus:border-red-600
+            "
+          />
+        </div>
+        <div class="mt-4">
+          <button
+            class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Register <i class="fa fa-long-arrow-right"></i>
+          </button>
+        </div>
       </div>
-    </div>
-
-    <div class="text-grey-dark mt-6">
-      Already have an account?
-      <a class="no-underline border-b border-blue text-blue" href="../login/">
-        Log in </a
-      >.
     </div>
   </div>
 </div>
-<!-- <app-footer></app-footer> -->
+
+<app-footer></app-footer>
